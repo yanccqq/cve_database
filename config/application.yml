@@ -1,0 +1,20 @@
+config:
+  website: https://192.168.20.125:9443/
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.nfschina.bean
+server:
+  port: 9001
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    druid:
+      initial-size: 5
+      max-active: 20
+      max-wait: 60000
+      min-idle: 5
+      validation-query: SELECT 1
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:sqlite:/media/nfs_dev_sda2/code/2022-08-18/cve_database/db/cve_database.db
